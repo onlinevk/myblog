@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static "css/home.css" %}"/>
+<script src="{% static "js/j1.js" %}"></script>
+<script src="{% static "js/j2.js" %}"></script>
+<script src="{% static "js/j3.js" %}"></script>
+<script src="{% static "js/home.js" %}"></script>
+<div id=top>knowledge Management System<span id=search>{% csrf_token %}<input type=text id='search' placeholder=search name=search></span><span id=user_name>vinay kumar</span></div>
+<nav align=left id=left>
+	<ul>
+		<li><a href='/profile/'>Profile</a></li>
+			<ul>
+				<li><a href='/new_profile/'>New</a></li>
+			</ul>
+		<li><a href='/'>Blog</a>
+			<ul>
+				<li><a href='/new'>New</a></li>
+			</ul>	
+		</li>
+		<li><a href=''>Article</a></li>
+		<li><a href=''>Department</a></li>
+		<li><a href=''>Human Resource</a></li>
+		<li><a href=''>Sales</a></li>
+		<li><a href=''>Document</a></li>
+		
+	</ul>
+</nav>
+

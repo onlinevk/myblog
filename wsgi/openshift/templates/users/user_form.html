@@ -1,0 +1,25 @@
+{% include 'information/left_nav.html' %}
+{% include 'information/right_nav.html' %}
+<br><br>
+<div align=center>
+<form method="post" id='profile_form'>
+User form
+
+<table>
+<tr>
+{% csrf_token %}
+	
+		
+			{{ form.as_table }}
+			
+{% if object.id %}
+	<td><input type="reset" value="Reset" /></td><td><input type="image" value="update" /></td>
+{% else %}
+	<td><input type="reset" value="Reset" /></td><td><input type="image" value="Submit" /></td>
+{% endif %}
+</tr>  
+</table>
+</form>
+<div id=preview></div>
+</div>
+

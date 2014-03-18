@@ -1,0 +1,23 @@
+</html>
+<head>
+
+</head>
+<body>
+
+<form method="post">
+Comment
+{% csrf_token %}
+<table>    
+{{ form.as_p }}
+<tr>
+	<td><input type="reset" value="Reset" /></td>
+{% if object.id %}
+	<td><input type="submit" value="update" /></td>
+{% else %}
+	<td><input type="submit" value="Submit" /></td>
+{% endif %}
+</tr>  
+</table>
+</form>
+</body>
+</html>

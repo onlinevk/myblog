@@ -1,0 +1,9 @@
+
+Search Text :-{{ a }}
+<div>
+{% for title in titles %}
+	<div class=id_title><a href="{% url "info" title.id %}">{{forloop.counter}}:-	{{ title.title }}</a></div>
+	<hr>
+{% endfor %}
+</div>
+

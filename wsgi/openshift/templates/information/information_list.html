@@ -1,0 +1,27 @@
+{% include 'information/left_nav.html' %}
+{% include 'information/right_nav.html' %}
+<br>
+<br>
+<div id=result></div>
+<div id=infoform align=center>
+{% for information in object_list %}
+<div class="field">
+	<div class=titel><a href="{% url "info" information.id %}">{{ information.title }}</a></div>
+	<div class=info>{{ information.info }}</div>
+	<div class=tag>{{ information.tag }}</div>
+	<div class='link'>
+	    	<a href="{% url "information_edit" information.id %}">Edit</a>
+	    	<a href="{% url "information_delete" information.id %}">Delete</a>
+		<a href="{% url "comment_new" %}"><span class="comment">Comment</span></a>
+		{% if information.like %}
+		<a href="{% url "like" information.id %}">{{ information.like }}Like</a>
+		{% else %}	
+		<a href="{% url "like" information.id %}">0 Like</a>
+		{% endif %}	
+		<a href=''>Rating</a>{{ information.date_modified }}
+	</div>
+</div>
+{% endfor %}
+</div>	
+<body>
+<html>

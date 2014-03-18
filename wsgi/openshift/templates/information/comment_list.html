@@ -1,0 +1,14 @@
+<h1>comment List</h1>
+<table border=1>
+<tr>
+    {% for comment in object_list %}
+	<td>{{ comment.comment }}</td>
+	<td>{{ comment.date_modified }}</td>
+    	<td><a href="{% url "comment_edit" comment.id %}">Edit</a></td>
+    	<td><a href="{% url "comment_delete" comment.id %}">Delete</a></td>
+	</tr>
+
+    {% endfor %}
+</table>
+
+<a href="{% url "information_new" %}">New</a>

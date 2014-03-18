@@ -1,0 +1,28 @@
+{% include 'information/left_nav.html' %}
+{% include 'information/right_nav.html' %}
+<br><br>
+<div align=center>
+<form method="post"  >
+Information form
+<div class="error">{% for field in form %}
+		{{ field.errors }}
+		{% endfor %}
+</div>
+{% csrf_token %}
+	
+		
+			{{ form.title }}
+			{{ form.info }}
+			{{ form.tag }}
+		
+{% if object.id %}
+	<td><input type="image" value="update" /></td>
+{% else %}
+	<td><input type="image" value="Submit" /></td>
+{% endif %}
+</tr>  
+</table>
+</form>
+<div id=preview></div>
+</div>
+

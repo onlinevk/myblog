@@ -1,0 +1,30 @@
+</html>
+<head>
+
+</head>
+<body>
+
+<form method="post">
+Comment
+{% csrf_token %}
+<div class="error">{% for field in form %}
+		{{ field.errors }}
+		{% endfor %}
+</div>
+	
+		<div class="fieldWrapper">
+			<div class=title>{{ form.info }}</div>
+			<div class=title>{{ form.comment }}</div>
+			
+		</div>
+	<td><input type="reset" value="Reset" /></td>
+{% if object.id %}
+	<td><input type="submit" value="update" /></td>
+{% else %}
+	<td><input type="submit" value="Submit" /></td>
+{% endif %}
+</tr>  
+</table>
+</form>
+</body>
+</html>
